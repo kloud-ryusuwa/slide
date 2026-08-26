@@ -2,8 +2,25 @@
 marp: true
 title: タイトル
 author: チーム 留数和
-
+header: '<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>'
 ---
+
+<style>
+/* 表紙（.lead）以外のページの h1 を上部に固定 */
+section:not(.lead) h2 {
+  position: absolute;
+  top: 40px;      /* 上からの位置（好みで調整） */
+  left: 40px;     /* 左からの位置（好みで調整） */
+  right: 40px;    /* 右からの位置（好みで調整） */
+  margin: 0;
+}
+
+/* 上部に固定した分、コンテンツが被らないように上に余白を作る */
+section:not(.lead) {
+  padding-top: 140px; /* h1の高さに合わせて調整 */
+  justify-content: flex-start; /* 上詰め配置にする */
+}
+</style>
 
 <!-- paginate: true -->
 <!-- _class: lead -->
@@ -78,24 +95,29 @@ n=2, チームメンバーを対象
 <!-- 実装力 -->
 # 画面遷移
 うんたらかんたら
+
 ---
 <!-- 実装力・AI活用力 -->
 # デモンストレーション
 
 ---
 <!-- 実用性 -->
-# 結果
+## 結果
 
+- スライド作成
 
-## 母集団の全員が「余計な作業が減った」と回答
-
-![data](./image.png)
+<div class="mermaid" style="">
+pie showData
+title 余計な作業
+"余計な作業が減った" : 100
+"余計な作業が減らなかった" : 0
+</div>
 
 ---
 <!-- 実用性 -->
 ## 母集団の全員が「期限を間に合わせるのに役に立った」と回答
 
-![data](./image.png)
+![height:400](./contents/chart-waste.png)
 
 n=3, チームメンバーを対象
 
@@ -108,26 +130,33 @@ n=3, チームメンバーを対象
 -> タスクをまずまずの結果で終わらせられる可能性が上がる
 ---
 <!-- 実装力 -->
-# 開発について
+## 開発について
 ---
 ## 失敗例
 <!-- 実装力 -->
 
 
 ---
-# 諦めたこと
+## 諦めたこと
 <!-- 実装力 -->
 
 
 
 ---
-# まとめ
+## まとめ
 
 - 絶対期限を守らせるスケジューラを作成した
 - 
 - 
 
 ---
+
 # 質疑応答
 
 ---
+
+## 参考: Discordチャットボット
+
+- GitHub: https://github.com/kloud-ryusuwa/discord-sakura-ai
+
+### 構成
